@@ -1,9 +1,10 @@
 $(document).ready(function(){
     
-var rappers = ["Sugar Hill Gang","Drake", "Slick Rick", "Lauryn Hill", "Jay-Z", "Nas", "Lizzo", "Missy Elliot", "Jidenna", "Childish Gambino", "J. Cole", "The Game", "Lupe Fisasco", "The Roots",];
+var rappers = ["Sugar Hill Gang","Drake", "Slick Rick", "Lauryn Hill", "Jay-Z", "Nas", "Lizzo", "Missy Elliot", "Jidenna", "Childish Gambino", "J. Cole", "Outkast", "Mos Def", "The Roots", "Common"];
 var  still = "";
 var  animate ="";
 var  state = "";
+var dataStill = "";
 
 function getButtons() {
 
@@ -41,27 +42,29 @@ getButtons();
         var rapGifs = $("<img>");
         var rating = results[i].rating;
         rapGifs.attr("Rating", rating);
-        rapGifs.attr("src", animate);
-        rapGifs.attr ("data-state", "animate")
+        rapGifs.attr("src", still);
+        dataStill = still;
+        dataAnimate = animate;  
+        rapGifs.attr("data-still", dataStill);
+        rapGifs.attr("data-animate", dataAnimate);
+        rapGifs.attr("data-state", "still");
         rapGifs.addClass("ajaxGifs");
         newDiv.prepend(rapGifs);
-        newDiv.prepend("Rating: " + rating);
+        newDiv.append("Rating: " + rating);
         $("#gifDiv").prepend(newDiv)
-           console.log("still = " +still)
     
       }
     });     
   });
 
-  $(".new").on("click", function() {
-    alert("Gif was clicked")
-  state = $(this).attr("data-state");
-  if (state === "animate") {
-    $(this).attr("src", $(this).attr(still));
-    $(this).attr("data-state", "still");
-  } else {
-    $(this).attr("src", $(this).attr(animate));
+  $(".container").on("click", ".ajaxGifs" , function() {
+   state = $(this).attr("data-state");
+  if (state === "still") {
+    $(this).attr("src", $(this).attr("data-animate"));
     $(this).attr("data-state", "animate");
+  } if  (state === "animate") {
+    $(this).attr("src", $(this).attr("data-still"));
+    $(this).attr("data-state", "still");
     
     }
 });
@@ -71,15 +74,13 @@ getButtons();
 
   $("#formBtn").on("click", function(event) {
     event.preventDefault();
-    // This line grabs the input from the textbox
     var newRap = $("#addRap").val().trim();
-
-    // Adding movie from the textbox to our array
     rappers.push(newRap);
-
-    // Calling renderButtons which handles the processing of our movie array
     getButtons();
   });
+
+
+
 });
 
 
