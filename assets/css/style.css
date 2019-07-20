@@ -32,10 +32,9 @@ form{
 background-color: gold;
 font-size: 20px;
 width: 300px;
-position: relative;
-right: -900px;
-padding-top: 50px;
 font-family: 'Permanent Marker', cursive;
+padding: 0 !important;
+margin: 0 !important;
 }
 
 .buttons{
@@ -48,4 +47,21 @@ font-family: 'Permanent Marker', cursive;
     background-color:black;
     border-radius: 25px;
 
+}
+
+.container{
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 2000px;
+}
+
+.form-group col {
+    padding: 0 !important;
+    margin: 0 !important;
+
+}
+
+.new{
+
+    display: inline;
 }
