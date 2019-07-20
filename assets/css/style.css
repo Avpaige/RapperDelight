@@ -23,12 +23,12 @@ body{
 }
 
 #gifDiv{
-background-image: url("../images/hiphop.jpg");
 background-color: gold;
-
+float:left;
 }
 
 form{
+    float:left;
 background-color: gold;
 font-size: 20px;
 width: 300px;
