@@ -1,0 +1,51 @@
+.gifButn{
+
+border-radius: 25px;
+font-family: 'Permanent Marker', cursive;
+color: gold;
+background-color: black;
+font-size: 20px;
+}
+
+#top{
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Permanent Marker', cursive;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    background-color: gold;
+    text-decoration: underline;
+}
+
+body{
+    background-color: gold;
+    font-family: 'Permanent Marker', cursive;
+}
+
+#gifDiv{
+background-image: url("../images/hiphop.jpg");
+background-color: gold;
+
+}
+
+form{
+background-color: gold;
+font-size: 20px;
+width: 300px;
+position: relative;
+right: -900px;
+padding-top: 50px;
+font-family: 'Permanent Marker', cursive;
+}
+
+.buttons{
+    padding-bottom: 50px;
+    background-color: gold;
+}
+
+#formBtn{
+    color:gold;
+    background-color:black;
+    border-radius: 25px;
+
+}
