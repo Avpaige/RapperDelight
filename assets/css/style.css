@@ -25,6 +25,9 @@ body{
 #gifDiv{
 background-color: gold;
 float:left;
+display: inline;
+padding-left: 40px;
+width: 100px;
 }
 
 form{
@@ -40,6 +43,7 @@ margin: 0 !important;
 .buttons{
     padding-bottom: 50px;
     background-color: gold;
+    padding-left: 100px;
 }
 
 #formBtn{
@@ -62,15 +66,30 @@ margin: 0 !important;
 }
 
 .new{
- 
+    float: left;
     font-family: 'Permanent Marker', cursive;
     display: inline;
 }
 
 .ajaxGifs{
     height: 200px;
-    width: 300px;
-    padding: 20px;
-    margin-left: 30px;
+    width: 300px;;
     font-size: 25px;
+    display: inline;
+    padding-left: 100px;
+}
+
+.rate {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 25px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    padding-left: 75px;
+    
+}
+
+#body {
+    background-color: gold;
+    padding: 0 !important;
+    margin: 0 !important;
 }

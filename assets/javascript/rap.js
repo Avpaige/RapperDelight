@@ -1,6 +1,6 @@
 $(document).ready(function(){
     
-var rappers = ["Sugar Hill Gang","Drake", "Slick Rick", "Lauryn Hill", "Jay-Z", "Nas", "Lizzo", "Missy Elliot", "Jidenna", "Childish Gambino", "J. Cole", "Outkast", "Mos Def", "The Roots", "Common"];
+var rappers = ["Slick Rick", "Lauryn Hill", "Jay-Z", "Nas", "Lizzo", "Missy Elliot", "Jidenna", "Childish Gambino", "J. Cole", "Outkast", "Mos Def", "The Roots", "Common", "Drake"];
 var  still = "";
 var  animate ="";
 var  state = "";
@@ -35,22 +35,26 @@ getButtons();
      for (var i = 0; i < results.length; i++) {
        still = results[i].images.original_still.url;
        animate = results[i].images.fixed_height.url;
-       
+       dataStill = still;
+       dataAnimate = animate;  
       
         newDiv = $("<div>")
         newDiv.addClass("new")
         var rapGifs = $("<img>");
-        var rating = results[i].rating;
-        rapGifs.attr("Rating", rating);
-        rapGifs.attr("src", still);
-        dataStill = still;
-        dataAnimate = animate;  
         rapGifs.attr("data-still", dataStill);
         rapGifs.attr("data-animate", dataAnimate);
         rapGifs.attr("data-state", "still");
         rapGifs.addClass("ajaxGifs");
         newDiv.prepend(rapGifs);
-        newDiv.append("Rating: " + rating);
+        rapGifs.attr("Rating", rating);
+        rapGifs.attr("src", still);
+        
+        ratDiv = $("<div>")
+        var rating = results[i].rating;  
+        ratDiv.append("Rating: " + rating);
+        ratDiv.addClass("rate");
+      
+        newDiv.append(ratDiv)
         $("#gifDiv").prepend(newDiv)
     
       }
@@ -86,9 +90,3 @@ getButtons();
 
       
  
-
-// $(document).on("click", ".gifButton", call);
-// getButtons();
-
-
-
